@@ -68,4 +68,15 @@ uint32_t Book::getCirculation() const
     return _circulation;
 }
 
+ostream& operator<<(ostream& out, const Book& b)
+{
+    out << b._title << ' ' << b._authorFirstName << ' ' << b._authorLastName << ' ' << b._price << ' ' << b._pageCount << b._circulation;
+    return out;
+}
+std::istream& operator>>(std::istream& in, Book& b)
+{
+    in >> b._title >> b._authorFirstName >> b._authorLastName >> b._price >> b._pageCount >> b._circulation;
+    return in;
+}
+
 
