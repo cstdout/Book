@@ -1,6 +1,7 @@
 #ifndef BOOK_H
 #define BOOK_H
 
+#include <iostream>
 #include <string>
 #include <cstdint>
 using namespace std;
@@ -14,6 +15,7 @@ protected:
     uint32_t _pageCount;
     uint32_t _circulation;
 public:
+    Book();
     Book(const string& title,
          const string& authorFirstName,
          const string& authorLastName,
@@ -35,8 +37,8 @@ public:
     uint32_t getPageCount() const;
     uint32_t getCirculation() const;
 
-    friend std::ostream& operator<<(std::ostream& out, const Book& v);
-    friend std::istream& operator>>(std::istream& in, Book& v);
+    friend ostream& operator<<(ostream& out, const Book&);
+    friend istream& operator>>(istream& in, Book&);
 
 
 };
