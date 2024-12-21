@@ -1,5 +1,8 @@
 #include "book.h"
+Book::Book()
+{
 
+}
 Book::Book(const string& title,
            const string& authorFirstName,
            const string& authorLastName,
