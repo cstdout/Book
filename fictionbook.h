@@ -2,11 +2,19 @@
 #define FICTIONBOOK_H
 #include "book.h"
 
+//enum FictionBookType
+//{
+//    NOVEL = 0,
+//    STORY,
+//    POEM
+//};
+
+
 enum FictionBookType
 {
-    NOVEL = 0,
-    STORY,
-    POEM
+    CLASSIC = 0,
+    FANTASY,
+    SCIENCE_FICTION
 };
 
 class FictionBook : public Book
@@ -22,14 +30,23 @@ public:
                 uint32_t price,
                 uint32_t pageCount,
                 uint32_t circulation);
+    FictionBook(const string& type,
+                uint32_t soldCopies,
+                const string& title,
+                const string& authorFirstName,
+                const string& authorLastName,
+                uint32_t price,
+                uint32_t pageCount,
+                uint32_t circulation);
 
     void setType(FictionBookType type);
+    void setType(const string& type);
     void setSoldCopies(uint32_t soldCopies);
 
     FictionBookType getType() const;
     uint32_t getSoldCopies() const;
 
-    float popularity() const;
+    double popularity() const;
     float expensive() const;
 
     friend ostream& operator<<(ostream&, const FictionBook&);
